@@ -63,8 +63,8 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <注册></注册>
+                                <button type="submit" class="btn btn-theme">
+                                    注册
                                 </button>
                             </div>
                         </div>

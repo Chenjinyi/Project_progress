@@ -311,9 +311,9 @@
                             <span>用户中心</span>
                         </a>
                         <ul class="sub">
-                            <li><a  href="/home/add">登录</a></li>
-                            <li><a  href="/show">注册</a></li>
-                            <li><a  href="buttons.html">帮助</a></li>
+                            <li><a  href="/login">登录</a></li>
+                            <li><a  href="/register">注册</a></li>
+                            <li><a  href="/help">帮助</a></li>
                         </ul>
                     </li>
                 </ul>
