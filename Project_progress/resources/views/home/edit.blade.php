@@ -6,38 +6,38 @@
 @section('content')
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i>添加项目</h3>
+            <h3><i class="fa fa-angle-right"></i>编辑项目</h3>
             <!-- BASIC FORM ELELEMNTS -->
             <div class="row mt">
                 <div class="col-lg-12">
                     <div class="form-panel">
-                        <h4 class="mb"><i class="fa fa-angle-right"></i> 新项目</h4>
-                        <form class="form-horizontal style-form" action="/home/add"  method="post">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i>{{$project->name}}</h4>
+                        <form class="form-horizontal style-form" action="/home/edit/{{$project->id}}"  method="post">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">项目名称</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{$project->name}}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">项目介绍</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="content" name="content" value="{{old('content')}}">
+                                    <input type="text" class="form-control" id="content" name="content" value="{{$project->content}}">
                                     <span class="help-block">请输入不少于10个字符的项目介绍</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label" id="github">GitHub项目地址</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="github" value="{{old('github')}}">
+                                    <input type="text" class="form-control" name="github" value="{{$project->github}}">
                                     <span class="help-block">可为空</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">开发者 ID</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" id="disabledInput" type="text" name="user_id" placeholder="{{Auth::user()->id}}" disabled>
+                                    <input class="form-control" id="disabledInput" type="text" name="user_id" value="{{$project->user_id}}"  disabled>
                                     <span class="help-block">添加更多开发者请前往项目设置</span>
                                 </div>
                             </div>

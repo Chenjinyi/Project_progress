@@ -22,7 +22,7 @@
                         @foreach($project as $val)
                         <tr>
                             <td>
-                                <a href="basic_table.html#">
+                                <a href="/project/{{$val->id}}">
                                 {{$val->name}}
                                 </a>
                             </td>
@@ -34,8 +34,8 @@
                                 <td><span class="label label-warning label-mini">异常</span></td>
                             @endif
                             <td>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                <a href="/home/edit/{{$val->id}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="/home/edit/{{$val->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                             </td>
                         </tr>
 @endforeach

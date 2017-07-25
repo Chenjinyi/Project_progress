@@ -18,16 +18,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //主页页面
 Route::get('/','IndexController@index');
+
 //展示页页面
-//TODO
+Route::get('/project/{posts}','ProjectController@project');
 
 
 //添加项目页面
 Route::get('/home/add','ProjectController@index')->middleware('auth');
 //添加项目逻辑
 Route::post('/home/add','ProjectController@add')->middleware('auth');
-//项目列表
+//项目列表页面
 Route::get('/home/show','ProjectController@show')->middleware('auth');
+//项目编辑页面
+Route::get('/home/edit/{project}','ProjectController@edit')->middleware('auth');
+//项目添加逻辑
+Route::post('/home/edit/{project}','ProjectController@update')->middleware('auth');
 //添加进度页面
 //TODO
 //添加进度逻辑
@@ -38,4 +43,3 @@ Route::get('/home/show','ProjectController@show')->middleware('auth');
 Route::get('/home/user','UserController@index')->middleware('auth');
 //更改逻辑
 Route::post('/home/user','UserController@user')->middleware('auth');
-
