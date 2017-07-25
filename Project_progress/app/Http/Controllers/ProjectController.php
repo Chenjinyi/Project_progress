@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\project;
+use \App\Project;
 
 class ProjectController extends Controller
 {//添加项目页面
