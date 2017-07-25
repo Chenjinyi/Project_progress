@@ -21,11 +21,13 @@ class ProjectController extends Controller
         ]);
         //获取User_id
         $user_id=\Auth::id();
-
-        $params = array_merge(
-            request(['name','centent','git','Developer']),
-            ['user_id'=>$user_id]);
-        project::create('$params');
+        //逻辑
+    $project = new project();
+    $project-> name = request('name');
+    $project-> content = request('content');
+    $project-> github = request('github');
+    $project-> user_id = $user_id;
+    $project->save();
         //渲染
         return redirect('/home');
     }
