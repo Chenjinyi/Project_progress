@@ -20,7 +20,6 @@ class ProjectController extends Controller
         $this->validate($request,[
             'name'=>'min:3|max:50|required|Unique:project,name',
             'content'=>'min:10|max:1000|required',
-            'git'=>'Unique:project,git'
         ]);
         //获取User_id
         $user_id=\Auth::id();
@@ -68,9 +67,7 @@ class ProjectController extends Controller
         $this->validate($request,[
             'name'=>'min:3|max:50|required|Unique:project,name',
             'content'=>'min:10|max:1000|required',
-            'github'=>'Unique:project,github'
     ]);
-        $this->authorize('update', $posts);
         //逻辑
         $project = Project::find($id);
         $project-> name = request('name');

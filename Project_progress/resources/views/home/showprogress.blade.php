@@ -36,7 +36,7 @@
                                         <td><span class="label label-warning label-mini">异常</span></td>
                                     @endif
                                     <td>
-                                        <a href="/home/edit/{{$val->id}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a href="/home/project/{{$val->id}}/edit" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                         <a href="/home/edit/{{$val->id}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
                                     </td>
                                 </tr>

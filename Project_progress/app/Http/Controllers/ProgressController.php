@@ -44,11 +44,25 @@ class ProgressController extends Controller
         return view('home.showprogress',compact('progress'));
     }
     //编辑进度页面
-    public function edit(){
-
+    public function edit(Request $request){
+        $progress = Progress::find($request->progress);
+        return view('home.progressedit',compact('progress'));
     }
     //编辑进度逻辑
-    public function update(){
-
+    public function update(Request $request){
+        //获取进度id
+        $id = $request->progress;
+        //验证
+        $this->validate($request,[
+            'title'=>'min:3|max:50|required|Unique:progress,name',
+            'content'=>'min:5|max:1000|required'
+        ]);
+        //逻辑
+        $progress = Progress::find($id);
+        $progress-> title = request('title');
+        $progress-> content = request('content');
+        $progress->save();
+        //渲染
+        return redirect('/home/project/show');
     }
 }
