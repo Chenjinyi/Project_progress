@@ -92,67 +92,26 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="timeline">
+                    @foreach($progress as $val)
                     <li>
                         <div class="timeline-image">
                             <img class="img-circle img-responsive" src="/img/about/1.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2017-7-6</h4>
-                                <h4 class="subheading">项目立项</h4>
+                                <h4>{{$val->created_at}}</h4>
+                                <h4 class="subheading">{{$val->title}}</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">决定本项目需要的功能<br>并使用MindNode构建思维导图!</p>
+                                <p class="text-muted">{{$val->content}}</p>
                             </div>
                         </div>
                     </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="/img/about/2.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2017-7-19</h4>
-                                <h4 class="subheading">项目框架</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">后端采用 Laravel5.4 + PHP7 +MYSQL5.6 开发 <br>前端采用 Bootstrap<br>使本项目拥有高效运行速度的同时拥有响应式前端</p>
-                            </div>
-                        </div>
-                    </li>
+                    @endforeach
                     <li>
-                        <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="/img/about/3.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2017-7</h4>
-                                <h4 class="subheading">项目优化</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">本项目是一个打算长期更新以及开发的项目</p>
-                            </div>
-                        </div>
-                    </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="/img/about/4.jpg" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2017-7</h4>
-                                <h4 class="subheading">项目维护</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">本项目采用MVC结构<br>前后端分离，维护成本大大降低</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>Less
-                                <br>Is
-                                <br>More!</h4>
+                            <a href="/progress/{{$project}}"><h4 style="color: white"><br>查看<br>更多</h4></a>
                         </div>
                     </li>
                 </ul>
@@ -167,45 +126,15 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">开发者介绍</h2>
-                <h3 class="section-subheading text-muted">.</h3>
+                <h3 class="section-subheading text-muted">开发本项目的作者</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="/img/team/1.jpg" class="img-responsive img-circle" alt="">
-                    <h4>前端</h4>
-                    <p class="text-muted">Franary</p>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
                     <img src="/img/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>后端</h4>
-                    <p class="text-muted">Franary</p>
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img src="/img/team/3.jpg" class="img-responsive img-circle" alt="">
-                    <h4>管理</h4>
-                    <p class="text-muted">Franary</p>
+                    <h4>开发者</h4>
+                    <p class="text-muted">{{$project->user->name}}</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>

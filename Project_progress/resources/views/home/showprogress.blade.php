@@ -11,7 +11,8 @@
                             <hr>
                             <thead>
                             <tr>
-                                <th><i class="fa fa-bullhorn"></i> 进度名称</th>
+                                <th><i class="fa fa-bullhorn"></i>所属项目</th>
+                                <th><i class="fa fa-bookmark"></i>进度名称</th>
                                 <th class="hidden-phone"><i class="fa fa-question-circle"></i> 进度简介</th>
                                 <th><i class="fa fa-bookmark"></i>创建日期</th>
                                 <th><i class=" fa fa-edit"></i> 项目状态</th>
@@ -23,9 +24,10 @@
                                 <tr>
                                     <td>
                                         <a href="/project/{{$val->id}}">
-                                            {{$val->title}}
+                                            {{$val->project->name}}
                                         </a>
                                     </td>
+                                    <td>{{$val->title}}</td>
                                     <td class="hidden-phone">{{$val->content}}</td>
                                     <td>{{$val->created_at}}</td>
                                     @if($val->status=='1')

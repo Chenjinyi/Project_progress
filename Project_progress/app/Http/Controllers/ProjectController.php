@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Progress;
 use Illuminate\Http\Request;
 use \App\Project;
-use\App\User;
+use \App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -48,10 +49,9 @@ class ProjectController extends Controller
         $id=$request->posts;
         //根据id查找项目
         $project = Project::find($id);
-        //TODO 根据user_id查找开发者
-//        $user_id = $project->user_id;
-//        $user = User::find($user_id);
-        return view('project',compact('project'));
+        //查找进度
+        $progress = Progress::where('project_id',$id)->get();
+        return view('project',compact('project','progress'));
     }
     //项目编辑页面
     public function edit(Request $request){
