@@ -33,11 +33,17 @@ Route::get('/home/show','ProjectController@show')->middleware('auth');
 Route::get('/home/edit/{project}','ProjectController@edit')->middleware('auth');
 //项目添加逻辑
 Route::post('/home/edit/{project}','ProjectController@update')->middleware('auth');
-//添加进度页面
-//TODO
-//添加进度逻辑
-//TODO
 
+//添加进度页面
+Route::get('/home/project/add','ProgressController@index')->middleware('auth');
+//添加进度逻辑
+Route::post('/home/project/add','ProgressController@add')->middleware('auth');
+//编辑进度页面
+Route::get('/home/project/{progress}/edit','ProgressController@edit')->middleware('auth');
+//编辑进度逻辑
+Route::post('/home/project/{progress}/edit','ProgressController@update')->middleware('auth');
+//进度表
+Route::get('/home/project/show','ProgressController@show')->middleware('auth');
 
 //个人信息更改页面
 Route::get('/home/user','UserController@index')->middleware('auth');

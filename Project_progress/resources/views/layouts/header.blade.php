@@ -232,7 +232,8 @@
                     <ul class="sub">
                         <li><a  href="/home/add">添加项目</a></li>
                         <li><a  href="/home/show">项目列表</a></li>
-                        <li><a  href="buttons.html">添加进度</a></li>
+                        <li><a  href="/home/project/add">添加进度</a></li>
+                        <li><a  href="/home/project/show">进度列表</a></li>
                     </ul>
                 </li>
 

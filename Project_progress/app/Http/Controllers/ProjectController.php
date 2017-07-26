@@ -61,7 +61,7 @@ class ProjectController extends Controller
         return view('home.edit',compact('project'));
     }
 //项目编辑逻辑
-    public function update(Request $request){
+    public function update(Request $request,Project $posts){
         //获取编辑id
         $id= $request->project;
         //验证
@@ -70,7 +70,7 @@ class ProjectController extends Controller
             'content'=>'min:10|max:1000|required',
             'github'=>'Unique:project,github'
     ]);
-//        $this->authorize('update',$project
+        $this->authorize('update', $posts);
         //逻辑
         $project = Project::find($id);
         $project-> name = request('name');
